@@ -6,6 +6,7 @@ let produitBtn = document.querySelector("#produit");
 let adivbBtn = document.querySelector("#adivb");
 let diviseursBtn = document.querySelector("#diviseurs");
 let nbpremierBtn = document.querySelector("#nbpremier");
+let sommeChiffreBtn = document.querySelector("#sommeChiffre");
 
 /**
  * function somme de n premiere entier
@@ -137,6 +138,21 @@ nbpremierBtn.addEventListener("click", ()=>{
     }else{
         alert(`le nombre ${x} est un nombre premier `);
     }
+}, false);
+
+/**
+ * function Somme chiffre
+ */
+sommeChiffreBtn.addEventListener("click", ()=>{
+    let n,s,r;
+    n = parseInt(prompt("Entrer un entier naturel N"));
+    s = 0;
+    r = n
+    while(r>0){
+        s = parseInt(s + (r % 10));
+        r = parseInt(r / 10);
+    }
+   alert(`la somme des chiffres qui compose ${n} est ${s} `);
 }, false);
 
 
