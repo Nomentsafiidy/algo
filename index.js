@@ -3,6 +3,7 @@ let sommeBtn = document.querySelector("#somme");
 let maxminBtn = document.querySelector("#maxmin");
 let quotresteBtn = document.querySelector("#quotreste");
 let produitBtn = document.querySelector("#produit");
+let adivbBtn = document.querySelector("#adivb");
 
 /**
  * function somme de n premiere entier
@@ -73,6 +74,26 @@ produitBtn.addEventListener("click", ()=>{
         }
     }
     alert(`le produit ${a} * ${b} est : ${p}`)
+}, false);
+
+/**
+ * function a div b
+ */
+adivbBtn.addEventListener("click", ()=>{
+    let a,b,r;
+    do{
+        a = parseInt(prompt("Entrer a positif"));
+        b = parseInt(prompt("Entrer b positif"));
+    }while(a < 0 || b < 0)
+    r = a;
+    while( r > 0 ){
+        r -= b;
+    }
+    if(r === 0){
+        alert(`${a} est divisible par ${b} `);
+    }else {
+        alert(`${a} n'est pas divisible par ${b} `);
+    }
 }, false);
 
 
