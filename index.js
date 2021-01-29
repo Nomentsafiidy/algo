@@ -4,6 +4,7 @@ let maxminBtn = document.querySelector("#maxmin");
 let quotresteBtn = document.querySelector("#quotreste");
 let produitBtn = document.querySelector("#produit");
 let adivbBtn = document.querySelector("#adivb");
+let diviseursBtn = document.querySelector("#diviseurs");
 
 /**
  * function somme de n premiere entier
@@ -94,6 +95,23 @@ adivbBtn.addEventListener("click", ()=>{
     }else {
         alert(`${a} n'est pas divisible par ${b} `);
     }
+}, false);
+
+/**
+ * function diviseurs
+ */
+diviseursBtn.addEventListener("click", ()=>{
+    let x,m;
+    let tab = [];
+    x = parseInt(prompt("Entrer x"));
+    m = parseInt(x / 2);
+    console.log(m);
+    for (let i = 0; i < m; i++){
+        if(x % i === 0){
+            tab.push(i)
+        }
+    }
+    alert(`les diviseur de ${x} sont : ${ tab },${x} `);
 }, false);
 
 
