@@ -2,6 +2,7 @@
 let sommeBtn = document.querySelector("#somme");
 let maxminBtn = document.querySelector("#maxmin");
 let quotresteBtn = document.querySelector("#quotreste");
+let produitBtn = document.querySelector("#produit");
 
 /**
  * function somme de n premiere entier
@@ -49,6 +50,29 @@ quotresteBtn.addEventListener("click", ()=>{
         r -= b;
     }
     alert(`Le Quotient de A/B est : ${q} Le reste de A/Best : ${r}`)
+}, false);
+
+/**
+ * function produitBtn
+ */
+produitBtn.addEventListener("click", ()=>{
+    let a,b,p;
+    a = parseInt(prompt("Entrer a"));
+    b = parseInt(prompt("Entrer b"));
+    if(a===0 || b===0){
+        p = 0;
+    }else if (a > b){
+        p = a;
+        for(let i = 2; i <= b; i++){
+            p += a;
+        }
+    }else {
+        p = b;
+        for(let i = 2; i <= a; i++){
+            p += b;
+        }
+    }
+    alert(`le produit ${a} * ${b} est : ${p}`)
 }, false);
 
 
