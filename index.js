@@ -1,16 +1,7 @@
-// Var I,N,S :entier ;
-// Début
-// Ecrire(‘Donner un entier N’) ; Lire(N) ;
-// S -0 ;
-// Pour I —1 a N-1 Faire
-// S —S+I;
-// Fait ;
-// Ecrire(‘La somme des’, N,’ premiers nombres est: ’,S) ;
-// Fin.
-
 
 let sommeBtn = document.querySelector("#somme");
 let maxminBtn = document.querySelector("#maxmin");
+let quotresteBtn = document.querySelector("#quotreste");
 
 /**
  * function somme de n premiere entier
@@ -23,24 +14,6 @@ sommeBtn.addEventListener("click", ()=>{
     }
     alert(`la somme des ${n} premiers nombres est : ${s}`)
 }, false);
-
-
-// Algorithme MaxMin;
-// Var I,N,Max,Min,X :entier ;
-// Début
-// Ecrire(‘Donner un entier N>0’) ;
-// Répéter Lire(N) ; Jusqu’à N>0 ;
-/* Lire le premier élément, puis initialiser le Min et le Max a cette valeur Lire(X) ; Max—X ; Min—X ;
-Pour I —2 a N Faire
-/* lire la suite des éléments et mettre a jour le Min et le Max
-Lire(X) ;
-Si Max<X Alors Max—X
-Sinon Si Min>X Alors Min—X Fsi
-Fsi ;
-Fait ;
-Ecrire(‘Le Minimun des valeurs est: ’,Min,’ le Maximum est : ‘,Max) ;
-Fin
-
 
 /**
  * function maxmin
@@ -60,6 +33,22 @@ maxminBtn.addEventListener("click", ()=>{
         }
     }
     alert(`Le Minimun des valeurs est: ${min} le Maximum est : ${max}`);
+}, false);
+
+/**
+ * function quot reste
+ */
+quotresteBtn.addEventListener("click", ()=>{
+    let a,b,q,r;
+    a = parseInt(prompt("Entrer a"));
+    b = parseInt(prompt("Entrer b"));
+    q= 0;
+    r = a;
+    while(r > b){
+        q  += 1;
+        r -= b;
+    }
+    alert(`Le Quotient de A/B est : ${q} Le reste de A/Best : ${r}`)
 }, false);
 
 
