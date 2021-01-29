@@ -5,6 +5,7 @@ let quotresteBtn = document.querySelector("#quotreste");
 let produitBtn = document.querySelector("#produit");
 let adivbBtn = document.querySelector("#adivb");
 let diviseursBtn = document.querySelector("#diviseurs");
+let nbpremierBtn = document.querySelector("#nbpremier");
 
 /**
  * function somme de n premiere entier
@@ -105,13 +106,37 @@ diviseursBtn.addEventListener("click", ()=>{
     let tab = [];
     x = parseInt(prompt("Entrer x"));
     m = parseInt(x / 2);
-    console.log(m);
     for (let i = 0; i < m; i++){
         if(x % i === 0){
             tab.push(i)
         }
     }
     alert(`les diviseur de ${x} sont : ${ tab },${x} `);
+}, false);
+
+/**
+ * function nombre premier
+ */
+nbpremierBtn.addEventListener("click", ()=>{
+    let x,m, pr = false;
+    x = parseInt(prompt("Entrer x"));
+    if(x===1){
+        pr= false;
+    }else{
+        m = parseInt(x/2); 
+    }
+    let i = 2
+    while(i <= m && !pr){
+        if(x % i === 0){
+            pr=true
+        }
+        i++;
+    }
+    if(pr){
+        alert(`le nombre ${x} n'est pas un nombre premier `);
+    }else{
+        alert(`le nombre ${x} est un nombre premier `);
+    }
 }, false);
 
 
